@@ -2,7 +2,7 @@
 (by Krishna Kalyan and Saul Garcia)
 
 
-#### INstructors
+#### Instructors
 - [Alicia Ageno](http://www.cs.upc.edu/~ageno/)
 - [Lluís Padró](http://www.cs.upc.edu/~padro/)
 - [Horacio Rodríguez](http://www.cs.upc.edu/~horacio/)
