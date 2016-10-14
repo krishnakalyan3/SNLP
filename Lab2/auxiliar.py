@@ -82,6 +82,6 @@ def countNgrams(l,inic,end=0):
 #importingBrownCorpusFromNLTK("../data/en.txt")
 
 #taggedWords = getTaggedWordsFromFile("../corpus/taggedBrown.txt")
-enWords = getWordsFromFile("../data/en.txt")
-esWords = getWordsFromFile("../data/es.txt")
+#enWords = getWordsFromFile("../data/en.txt")
+#esWords = getWordsFromFile("../data/es.txt")
 #tags = getTagsFromTaggedWords(taggedWords)
