@@ -17,7 +17,7 @@ def importingBrownCorpusFromNLTK(outF):
     "importing tagged brown corpus from NLTK and writing on a file OutF"
     outF = open(outF,'w')
     from nltk.corpus import brown
-    brown_news_tagged = brown.tagged_words(categories='news',simplify_tags=True)
+    brown_news_tagged = brown.tagged_words(categories='news', tagset='universal')
     print 'size', len(brown_news_tagged)
     for i in brown_news_tagged:
         outF.write(i[0]+'\t'+i[1]+'\n')
@@ -77,11 +77,3 @@ def countNgrams(l,inic,end=0):
         else:
             T[(l[i-2],l[i-1],l[i])] +=1
     return (U,B,T)
-      
-##importing tagged brown corpus from NLTK
-#importingBrownCorpusFromNLTK("../data/en.txt")
-
-#taggedWords = getTaggedWordsFromFile("../corpus/taggedBrown.txt")
-#enWords = getWordsFromFile("../data/en.txt")
-#esWords = getWordsFromFile("../data/es.txt")
-#tags = getTagsFromTaggedWords(taggedWords)
