@@ -57,11 +57,16 @@ def tri_entropy(tri_gram_prob_dict, bi_gram_prob_dict, uni_gram_prob_dict):
 
 def get_brown_tri(tagged_data):
 	words_without_tag = []
-	#for i in range(0,len(tagged_data), 3):
-	#	words_without_tag.append([tagged_data[i][0], tagged_data[i+1][0], tagged_data[i+2][0]])
 	for word,tag in tagged_data:
 		words_without_tag.append(word)
 	return words_without_tag
+
+def get_brown_tags_uni(tagged_data):
+	tags = []
+	for word,tag in tagged_data[0]:
+		tags.append(tag)
+	return tags
+
 
 # Get Data
 n_grams_en = ax.countNgrams(enWords, 0)
@@ -103,9 +108,10 @@ bi_prob_b = prob_yx(bi_gram_dict_b, uni_gram_dict_b)
 tri_gram_dict_b = filter_data(n_grams_en_b, 3)
 tri_prob_b = prob_zxy(tri_gram_dict_b, bi_gram_dict_b)
 H_tri = tri_entropy(tri_prob_b, bi_prob_b, uni_prob_b)
-print 2 ** H_tri
+print 'preplexity ', 2 ** H_tri
+print 'Entropy ', H_tri
 
-
-
-
-
+# Smoothing
+# < x', y , z>
+n_grams_en_b = ax.countNgrams(full_tagged_data, 0)
+#print get_brown_tags_uni(n_grams_en_b)
