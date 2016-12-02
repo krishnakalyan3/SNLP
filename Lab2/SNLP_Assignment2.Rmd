@@ -1,0 +1,32 @@
+---
+title: "SNLP Assignment 2, Entropy"
+author: "Saul Garcia and Krishna Kalyan"
+output:
+  pdf_document: default
+  html_document:
+    fig_caption: yes
+    highlight: pygments
+graphics: yes
+---
+### Introduction
+For this assignment we had to calculate `Perplexity` from the tags obtained from the `tagged brown corpus` and discuss the results over different corpus size and different smoothing parameters. In information theory, perplexity is a measurement of how well a probability distribution or probability model predicts a sample (2 ^ H). Basically the lower the perplexity, the better the model.
+
+### Results
+![Experiments](/Users/krishna/MIRI/SNLP/Homework/Lab2/exp.png)
+
+
+### Conclusions
+We observe that usually entropy in a trigram is lower than that of a bigram or a unigram. Our experiments were conducted on english corpus containing `926761` words and `100554` tags.
+In our experiments we observed perplexity under three different condition : `No Smoothing`, `Smoothing X` and `Smoothing X and Y`.
+We observed that both entropy and perplexity tend to decrease when we decrese the corpus size. This was observed by running experiments over different corpus sizes : `Full`, `Half` and `Quarter`.
+
+We started by running experiments without smoothing and obseved that these results were better than experiments run over smoothing `x`, `x and y`. 
+
+Its important to say that for a given word the results obtained consider only the last POS tag. It could have been interesting to handel this ambiguity of having multiple POS tags assoiciated for a specific word. For instance, a word could be a common noun and a proper noun at the same time.
+
+
+
+
+
+
+

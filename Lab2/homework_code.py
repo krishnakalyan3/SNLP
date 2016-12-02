@@ -98,6 +98,20 @@ quarter_tagged_data = tagged_en[0:len(full_tagged_data)/4]
 
 print "Data Split Sizes ", len(full_tagged_data), len(half_tagged_data), len(quarter_tagged_data)
 
+
+uni_gram_dict = corpus_list[0]
+	freq_uni = freq_count(uni_gram_dict)
+	uni_prob = prob_x(uni_gram_dict, freq_uni)
+	h_uni_gram = uni_entropy(uni_prob)
+
+	bi_gram_dict = corpus_list[1]
+	bi_prob = prob_yx(bi_gram_dict, uni_gram_dict)
+	h_bi_gram =  bi_entropy(bi_prob, uni_prob)
+
+	tri_gram_dict = corpus_list[2]
+	tri_prob = prob_zxy(tri_gram_dict, bi_gram_dict)
+	h_tri_gram = tri_entropy(tri_prob, bi_prob, uni_prob)
+	
 # Brown Corpus
 n_grams_en_b =  get_brown_tri(full_tagged_data)
 n_grams_en_b = ax.countNgrams(n_grams_en_b, 0)
